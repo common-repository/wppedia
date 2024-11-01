@@ -1,0 +1,126 @@
+/**
+ * Forms
+ */
+ .form-table {
+	.wppedia-pro-feature {
+		> th {
+			display: flex;
+			justify-content: space-between;
+			&:after {
+				content: '';
+				background-image: url('/assets/img/pro-badge.svg');
+				display: block;
+				width: 35px;
+				height: 15px;
+				margin: .25em 0 0 1em;
+				flex: 0 0 35px;
+			}
+		}
+	}
+	td {
+		&:first-child {
+			padding-left: 0;
+		}
+	}
+}
+
+.wppedia-checkbox-group {
+	&-item {
+		display: block;
+		input {
+			display: inline-block;
+		}
+	}
+}
+
+.wppedia-option-description {
+	color: $grey;
+	margin-top: .5em;
+}
+
+// Checkbox switches
+input.wppedia-switch-button {
+	border: 0;
+	clip: rect(1px,1px,1px,1px);
+	-webkit-clip-path: inset(50%);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+	word-wrap: normal!important;
+	&:checked {
+		+ .wppedia-switch-label {
+			&:before {
+				content: attr(data-on);
+				background-color: #160351;
+				border: 1px solid #160351;
+				color: #fff;
+				padding: 0 26px 0 6px
+			}
+			&:after {
+				left: 57px;
+				transform: translateX(-100%)
+			}
+		}
+	}
+	&:disabled {
+		+ .wppedia-switch-label {
+			cursor: not-allowed;
+			&:before,
+			&:after {
+				opacity: .6;
+			}
+		}
+	}
+}
+
+.wppedia-switch-label {
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	padding-left: 60px;
+	margin-top: 0;
+	min-height: 26px;
+	&:after {
+		content: "";
+		position: absolute;
+		top: 3px;
+		left: 3px;
+		width: 20px;
+		height: 20px;
+		background: #fff;
+		border-radius: 5px;
+		transition: .3s;
+		z-index: 3;
+	}
+	&:before {
+		content: attr(data-off);
+		width: 60px;
+		position: absolute;
+		left: 0;
+		height: 26px;
+		line-height: 26px;
+		box-sizing: border-box;
+		background-color: #e0e0e0;
+		border: 1px solid #d6d6d6;
+		display: inline-block;
+		border-radius: 5px;
+		vertical-align: middle;
+		color: #444;
+		transition: background .1s linear, color .1s linear, border .1s linear;
+		padding: 0 6px 0 26px
+	}
+}
+
+.wppedia-select2 {
+	min-width: 350px;
+}
+
+@media (max-width: 480px) {
+	.wppedia-select2 {
+		width: 100%;
+	}
+}

@@ -1,0 +1,42 @@
+{
+    "name": "wppedia/wppedia",
+    "description": "The most advanced Glossary solution for WordPress!",
+    "type": "wordpress-plugin",
+    "license": "GPLv3",
+    "authors": [
+        {
+            "name": "Bastian Fießinger",
+            "email": "bastian.fiessinger@steinrein.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": "^7.3|^8.0"
+    },
+    "require-dev": {
+        "mythemeshop/wordpress-helpers": "^1.1"
+    },
+    "autoload": {
+			"classmap": [
+				"core/classes/",
+				"3rd-party/"
+			]
+    },
+	"scripts": {
+		"post-install-cmd": [
+			"@prefix-dependencies"
+		],
+		"post-update-cmd": [
+			"@prefix-dependencies"
+		],
+		"prefix-dependencies": [
+			"@composer --working-dir=php-scoper install",
+			"@composer prefix-vendor-mythemeshop",
+			"@composer dump-autoload -a",
+			"@composer --working-dir=3rd-party dump-autoload -a"
+		],
+		"prefix-vendor-mythemeshop": [
+			"@php ./php-scoper/vendor/humbug/php-scoper/bin/php-scoper add-prefix --prefix=\"WPPedia_Vendor\" --output-dir=\"./3rd-party/mythemeshop/wordpress-helpers\" --config=\"./config/php-scoper/mythemeshop.inc.php\" --force --quiet"
+		]
+	}
+}

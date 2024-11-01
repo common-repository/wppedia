@@ -1,0 +1,63 @@
+/**
+ * Theme Options
+ */
+@import '../../options';
+
+#wppedia_searchform {
+	position: relative;
+	display: flex;
+	flex-wrap: nowrap;
+	margin-bottom: 1.5rem;
+	.search-field {
+		border-top-right-radius: 0;
+		border-bottom-right-radius: 0;
+		width: 100%;
+	}
+	.search-submit {
+		border-top-left-radius: 0;
+		border-bottom-left-radius: 0;
+		flex: 0 0 auto;
+	}
+}
+
+#wppedia_results_rendered {
+	position: absolute;
+	top: calc(100% + 1rem);
+	left: 0;
+	margin: 0;
+	border: solid $main-color;
+	border-color: var(--wppedia-main-color);
+	border-width: 1px;
+	padding: 0;
+	width: 100%;
+	z-index: 2;
+	background: #fff;
+	transition: none;
+	list-style: none;
+	> li {
+		&:hover {
+			background: rgba(0, 0, 0, 0.12);
+		}
+	}
+	a {
+		display: block;
+		padding: .6rem;
+		color: inherit;
+	}
+	&:before {
+		content: '';
+		position: absolute;
+		top: -.5rem;
+		left: 1rem;
+		width: 0;
+		height: 0;
+		border-left: .5rem solid transparent;
+		border-right: .5rem solid transparent;
+		border-bottom: .5rem solid $main-color;
+		border-bottom-color: var(--wppedia-main-color);
+		transform: translateX(-50%);
+	}
+}
+
+
+

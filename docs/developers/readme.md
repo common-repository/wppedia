@@ -1,0 +1,3 @@
+# WPPedia Developer Docs
+
+## Shortcodes

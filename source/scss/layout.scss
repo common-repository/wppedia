@@ -1,0 +1,63 @@
+@import 'options';
+
+/**
+ * Global
+ */
+.wppedia-content-area {
+	max-width:100%;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.wppedia-page {
+	.wppedia-featured-image-wrapper, .wppedia-thumbnail-wrapper {
+		margin-bottom: 1.5em;
+	}
+	.pagination {
+		ul {
+			list-style-type: none;
+		}
+		li {
+			display: inline-block;
+		}
+	}
+}
+
+/**
+ * Loop
+ */
+.wppedia-loop-wrapper {
+	.wppedia-post-title {
+		margin: 0 0 .2rem;
+	}
+	.wppedia-entry-content {
+		margin: 0;
+	}
+}
+
+.wppedia-char-section-indentifier {
+	display: inline-flex;
+	align-items: center;
+	margin-bottom: 1em;
+	&:not(:first-child) {
+		margin-top: 2em;
+	}
+	.wppedia-anchor {
+		float: left;
+    padding-right: 4px;
+    margin-left: -20px;
+    line-height: 1;
+		color: inherit;
+		visibility: hidden;
+	}
+	.char {
+		font-weight: 700;
+		background-color: $secondary-color;
+		padding: .25em .75em;
+	}
+	&:hover {
+		.wppedia-anchor {
+			visibility: visible;
+		}
+	}
+}

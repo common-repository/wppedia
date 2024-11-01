@@ -1,0 +1,149 @@
+.wppedia-page {
+	/**
+	 * Page
+	 */
+	#wpcontent {
+		padding: 0;
+	}
+	.wrap {
+		margin: 0;
+	}
+
+	/**
+	 * Tabs
+	 */
+	$tab_width: 200px;
+	.ui-tabs {
+		*, *:before, *:after {
+			box-sizing: border-box;
+		}
+		&.ui-tabs-vertical {
+			padding: 0;
+			width: 100%;
+			.ui-widget-header {
+				border: none;
+			}
+			.ui-tabs-nav {
+				float: left;
+				width: $tab_width;
+				margin: 0;
+				li {
+					clear: left;
+					width: 100%;
+					margin: 0;
+					border: 0;
+					overflow: hidden;
+					position: relative;
+					right: 0;
+					z-index: 2;
+					border-width: 0 0 1px 4px;
+					border-left-color: transparent;
+					border-top-color: $grey;
+					border-bottom-color: $grey;
+					border-style: solid;
+					&:first-child {
+						margin-top: 0;
+					}
+					&:last-child {
+						border-bottom-width: 0;
+					}
+					&.ui-tabs-active, &:hover {
+						background: #FFF;
+						border-left-color: $primary;
+						a{
+							color: $primary;
+						}
+					}
+					a {
+						display: block;
+						padding: 1em;
+						&:hover {
+							cursor: pointer;
+						}
+					}
+				}
+			}
+			.ui-tabs-panel {
+				float: left;
+				width: calc(100% - #{$tab_width});
+				padding: 20px; 
+				border-radius: 0;
+				position: relative;
+				background: #FFF;
+			}
+		}
+	}
+	.submit {
+		clear: both;
+	}
+
+}
+
+.wppedia-layout-header {
+	position: fixed;
+	z-index: 999;
+	top: 32px;
+	display: flex;
+	align-items: center;
+	padding: 0 0 0 40px;
+	flex: 1 auto;
+	background: #fff;
+	font-weight: 600;
+	font-size: 14px;
+	text-transform: capitalize;
+	width: calc(100% - 160px);
+	.wppedia-logo {
+		padding: 1em 0;
+	}
+}
+
+.folded {
+	.wppedia-layout-header {
+		width: calc(100% - 36px);
+	}
+}
+
+.wppedia-layout-wrap {
+	margin: 100px 20px 0 2px;
+	padding-left: 20px;
+}
+
+.wppedia-layout-flex-container {
+	display: flex;
+	align-items: flex-start;
+}
+
+.wppedia-layout-content {
+	width: 100%;
+	margin-right: 2em;
+}
+
+.wppedia-layout-sidebar {
+	width: 200px;
+	flex: 0 0 200px;
+	position: sticky;
+	top: 120px;
+}
+
+.wppedia-spacer {
+	display: block;
+	height: 1rem;
+	&-1 {
+		height: .25rem;
+	}
+	&-2 {
+		height: .5rem;
+	}
+	&-3 {
+		height: .75rem;
+	}
+	&-4 {
+		height: 1rem;
+	}
+	&-5 {
+		height: 1.25rem;
+	}
+	&-6 {
+		height: 1.5rem;
+	}
+}
